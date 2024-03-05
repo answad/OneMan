@@ -30,8 +30,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -175,11 +179,18 @@ fun TopAppBar(text: String) {
         modifier = Modifier
             .fillMaxWidth()
             .height(48.dp)
-            .padding(top = 10.dp, bottom = 10.dp, start = 15.dp, end = 15.dp),
+            .background(color = Color(0xFFFFFFFF))
+            .padding(start = 20.dp, top = 12.dp, end = 20.dp, bottom = 12.dp),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Text(
             text = text,
+            style = TextStyle(
+                fontSize = 16.sp,
+                fontWeight = FontWeight(700),
+                color = Color(0xFF171717),
+                textAlign = TextAlign.Center,
+            )
         )
         Image(
             modifier = Modifier
