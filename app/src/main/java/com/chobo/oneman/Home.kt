@@ -3,6 +3,7 @@ package com.chobo.oneman
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -30,9 +31,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
 fun Home() {
+    val navController = rememberNavController()
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -86,11 +90,26 @@ fun Home() {
                 .padding(start = 20.dp, top = 16.dp, end = 20.dp),
         ) {
             Spacer(modifier = Modifier.size(12.dp))
-            HomeServiceCard(topText = "나를 위한 지원 알아보러가기", bottomText = "나를 위한 지원 사업 알아보고 지원금 받자!")
+            HomeServiceCard(
+                topText = "나를 위한 지원 알아보러가기",
+                bottomText = "나를 위한 지원 사업 알아보고 지원금 받자!",
+                navController = navController,
+                "지원"
+            )
             Spacer(modifier = Modifier.size(12.dp))
-            HomeServiceCard(topText = "내 건강을 위해 식단 체크해보기", bottomText = "식단을 기록하고 돌아보고 건강도 챙기자!")
+            HomeServiceCard(
+                topText = "내 건강을 위해 식단 체크해보기",
+                bottomText = "식단을 기록하고 돌아보고 건강도 챙기자!",
+                navController = navController,
+                "식단"
+            )
             Spacer(modifier = Modifier.size(12.dp))
-            HomeServiceCard(topText = "지친 내마음, 달래줄 곳이 필요하다면?", bottomText = "무거운 이야기들, 챗봇에게 털어놓자")
+            HomeServiceCard(
+                topText = "지친 내마음, 달래줄 곳이 필요하다면?",
+                bottomText = "무거운 이야기들, 챗봇에게 털어놓자",
+                navController = navController,
+                "마음치유"
+            )
         }
         Spacer(modifier = Modifier.size(28.dp))
         Column(
@@ -138,7 +157,7 @@ fun Home() {
 }
 
 @Composable
-fun HomeServiceCard(topText: String, bottomText: String) {
+fun HomeServiceCard(topText: String, bottomText: String, navController: NavHostController, navigationRoute : String) {
 
     Row(
         horizontalArrangement = Arrangement.spacedBy(12.dp, Alignment.Start),
@@ -154,7 +173,10 @@ fun HomeServiceCard(topText: String, bottomText: String) {
             verticalAlignment = Alignment.Top,
             modifier = Modifier
                 .width(310.dp)
-                .height(19.dp),
+                .height(19.dp)
+                .clickable {
+                    navController.navigate(navigationRoute)
+                },
         ) {
             Text(
                 text = topText,
@@ -345,3 +367,4 @@ fun NearbyEcoFriendlyMartTag(text: String) {
         )
     }
 }
+
