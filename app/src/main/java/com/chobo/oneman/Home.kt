@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -28,15 +27,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun Home() {
-    val navController = rememberNavController()
+fun Home(navController:NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -94,21 +90,21 @@ fun Home() {
                 topText = "나를 위한 지원 알아보러가기",
                 bottomText = "나를 위한 지원 사업 알아보고 지원금 받자!",
                 navController = navController,
-                "지원"
+                navigationRoute = "지원",
             )
             Spacer(modifier = Modifier.size(12.dp))
             HomeServiceCard(
                 topText = "내 건강을 위해 식단 체크해보기",
                 bottomText = "식단을 기록하고 돌아보고 건강도 챙기자!",
                 navController = navController,
-                "식단"
+                navigationRoute = "식단",
             )
             Spacer(modifier = Modifier.size(12.dp))
             HomeServiceCard(
                 topText = "지친 내마음, 달래줄 곳이 필요하다면?",
                 bottomText = "무거운 이야기들, 챗봇에게 털어놓자",
                 navController = navController,
-                "마음치유"
+                navigationRoute = "마음치유",
             )
         }
         Spacer(modifier = Modifier.size(28.dp))
@@ -157,7 +153,13 @@ fun Home() {
 }
 
 @Composable
-fun HomeServiceCard(topText: String, bottomText: String, navController: NavHostController, navigationRoute : String) {
+fun HomeServiceCard(
+    topText: String,
+    bottomText: String,
+    navController: NavHostController,
+    navigationRoute: String
+) {
+
 
     Row(
         horizontalArrangement = Arrangement.spacedBy(12.dp, Alignment.Start),
@@ -166,47 +168,54 @@ fun HomeServiceCard(topText: String, bottomText: String, navController: NavHostC
             .width(350.dp)
             .height(92.dp)
             .background(color = Color(0xFFF8F8F9), shape = RoundedCornerShape(size = 16.dp))
-            .padding(start = 20.dp, top = 24.dp, end = 20.dp, bottom = 24.dp),
+            .padding(start = 20.dp, top = 24.dp, end = 20.dp, bottom = 24.dp)
+            .clickable {
+                navController.navigate(navigationRoute)
+            },
     ) {
-        Row(
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.Top,
+        Column(
+            verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
+            horizontalAlignment = Alignment.Start,
             modifier = Modifier
                 .width(310.dp)
-                .height(19.dp)
-                .clickable {
-                    navController.navigate(navigationRoute)
-                },
+                .height(44.dp),
         ) {
-            Text(
-                text = topText,
-
+            Row(
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.Top,
                 modifier = Modifier
+                    .width(310.dp)
                     .height(19.dp),
+            ) {
+                Text(
+                    text = topText,
+
+                    modifier = Modifier
+                        .height(19.dp),
+                    style = TextStyle(
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight(600),
+                        color = Color(0xFF171717),
+                        textAlign = TextAlign.Center,
+                    )
+                )
+                Image(
+                    painter = painterResource(id = R.drawable.right_arrow),
+                    contentDescription = "image description",
+                    contentScale = ContentScale.None
+                )
+            }
+            Text(
+                text = bottomText,
+                modifier = Modifier
+                    .width(231.dp),
                 style = TextStyle(
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight(600),
-                    color = Color(0xFF171717),
-                    textAlign = TextAlign.Center,
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight(500),
+                    color = Color(0xFFB4B5B7),
                 )
             )
-            Image(
-                painter = painterResource(id = R.drawable.right_arrow),
-                contentDescription = "image description",
-                contentScale = ContentScale.None
-            )
         }
-        Text(
-            text = bottomText,
-            modifier = Modifier
-                .width(231.dp)
-                .height(17.dp),
-            style = TextStyle(
-                fontSize = 14.sp,
-                fontWeight = FontWeight(500),
-                color = Color(0xFFB4B5B7),
-            )
-        )
     }
 }
 
@@ -317,7 +326,7 @@ fun NearbyEcoFriendlyMart(
                 .width(257.dp),
         ) {
             Text(
-                text = "“초록마을”의 매장 정보 더 보기",
+                text = "“${topText}”의 매장 정보 더 보기",
                 modifier = Modifier
                     .width(148.dp)
                     .height(14.dp),
@@ -342,7 +351,9 @@ fun NearbyEcoFriendlyMart(
 }
 
 @Composable
-fun NearbyEcoFriendlyMartTag(text: String) {
+fun NearbyEcoFriendlyMartTag(
+    text: String
+) {
     Row(
         modifier = Modifier
             .border(
