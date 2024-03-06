@@ -29,7 +29,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-data class supprotOptionData(
+data class SupprotOptionData(
     val topText: String,
     val bottomText: String,
 )
@@ -104,40 +104,40 @@ fun SelectOptionList() {
     val selectedTabIndex = remember { mutableStateOf(0) }
     val tabs = listOf("일자리", "주거", "교육", "코로나", "의료", "기타")
     val supprotList = listOf(
-        supprotOptionData(topText = "장애학생 취업 지원", bottomText = "100만원"),
-        supprotOptionData(topText = "소외계층 청소년을 위한 자립 생활 지원", bottomText = "주거 공간 제공"),
-        supprotOptionData(topText = "장애학생 취업 지원", bottomText = "100만원"),
-        supprotOptionData(topText = "소외계층 청소년을 위한 자립 생활 지원", bottomText = "주거 공간 제공")
+        SupprotOptionData(topText = "장애학생 취업 지원", bottomText = "100만원"),
+        SupprotOptionData(topText = "소외계층 청소년을 위한 자립 생활 지원", bottomText = "주거 공간 제공"),
+        SupprotOptionData(topText = "장애학생 취업 지원", bottomText = "100만원"),
+        SupprotOptionData(topText = "소외계층 청소년을 위한 자립 생활 지원", bottomText = "주거 공간 제공")
     )
     val homeList = listOf(
-        supprotOptionData(topText = "장애학생 주거", bottomText = "10원"),
-        supprotOptionData(topText = "장애학생 주거", bottomText = "10원"),
-        supprotOptionData(topText = "장애학생 주거", bottomText = "10원"),
-        supprotOptionData(topText = "장애학생 주거", bottomText = "10원"),
+        SupprotOptionData(topText = "장애학생 주거", bottomText = "10원"),
+        SupprotOptionData(topText = "장애학생 주거", bottomText = "10원"),
+        SupprotOptionData(topText = "장애학생 주거", bottomText = "10원"),
+        SupprotOptionData(topText = "장애학생 주거", bottomText = "10원"),
     )
     val eduList = listOf(
-        supprotOptionData(topText = "초등교육 강화", bottomText = "10000만원"),
-        supprotOptionData(topText = "초등교육 강화", bottomText = "10000만원"),
-        supprotOptionData(topText = "초등교육 강화", bottomText = "10000만원"),
-        supprotOptionData(topText = "초등교육 강화", bottomText = "10000만원"),
+        SupprotOptionData(topText = "초등교육 강화", bottomText = "10000만원"),
+        SupprotOptionData(topText = "초등교육 강화", bottomText = "10000만원"),
+        SupprotOptionData(topText = "초등교육 강화", bottomText = "10000만원"),
+        SupprotOptionData(topText = "초등교육 강화", bottomText = "10000만원"),
     )
     val covidList = listOf(
-        supprotOptionData(topText = "코로나지원", bottomText = "1원"),
-        supprotOptionData(topText = "코로나지원", bottomText = "1원"),
-        supprotOptionData(topText = "코로나지원", bottomText = "1원"),
-        supprotOptionData(topText = "코로나지원", bottomText = "1원"),
+        SupprotOptionData(topText = "코로나지원", bottomText = "1원"),
+        SupprotOptionData(topText = "코로나지원", bottomText = "1원"),
+        SupprotOptionData(topText = "코로나지원", bottomText = "1원"),
+        SupprotOptionData(topText = "코로나지원", bottomText = "1원"),
     )
     val medicalList = listOf(
-        supprotOptionData(topText = "성형수술비 지원", bottomText = "10000만원"),
-        supprotOptionData(topText = "성형수술비 지원", bottomText = "10000만원"),
-        supprotOptionData(topText = "성형수술비 지원", bottomText = "10000만원"),
-        supprotOptionData(topText = "성형수술비 지원", bottomText = "10000만원"),
+        SupprotOptionData(topText = "성형수술비 지원", bottomText = "10000만원"),
+        SupprotOptionData(topText = "성형수술비 지원", bottomText = "10000만원"),
+        SupprotOptionData(topText = "성형수술비 지원", bottomText = "10000만원"),
+        SupprotOptionData(topText = "성형수술비 지원", bottomText = "10000만원"),
     )
     val guitarList = listOf(
-        supprotOptionData(topText = "기타지원금 + 피크 지원금", bottomText = "1000원"),
-        supprotOptionData(topText = "기타지원금 + 피크 지원금", bottomText = "1000원"),
-        supprotOptionData(topText = "기타지원금 + 피크 지원금", bottomText = "1000원"),
-        supprotOptionData(topText = "기타지원금 + 피크 지원금", bottomText = "1000원"),
+        SupprotOptionData(topText = "기타지원금 + 피크 지원금", bottomText = "1000원"),
+        SupprotOptionData(topText = "기타지원금 + 피크 지원금", bottomText = "1000원"),
+        SupprotOptionData(topText = "기타지원금 + 피크 지원금", bottomText = "1000원"),
+        SupprotOptionData(topText = "기타지원금 + 피크 지원금", bottomText = "1000원"),
     )
     val selectedList = when (selectedTabIndex.value) {
         0 -> supprotList
