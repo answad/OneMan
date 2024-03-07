@@ -16,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -105,20 +106,24 @@ fun Health() {
                         contentScale = ContentScale.None
                     )
                     Image(
-                        painter = painterResource(id = R.drawable.arrow_back_ios_new),
+                        painter = painterResource(id = R.drawable.arrow_front_ios_new),
                         contentDescription = "image description",
+                        modifier = Modifier.graphicsLayer(rotationY = 180f),
                         contentScale = ContentScale.None
                     )
                     Column(
-                        verticalArrangement = Arrangement.SpaceBetween,
+                        verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally,
                         modifier = Modifier
                             .height(20.dp)
-                            .background(color = Color(0xFFEFF0F2), shape = RoundedCornerShape(size = 16.dp)),
+                            .background(
+                                color = Color(0xFFEFF0F2),
+                                shape = RoundedCornerShape(size = 16.dp)
+                            ),
                     ) {
                         Text(
                             text = "주",
-
+                            modifier = Modifier.width(27.dp),
                             style = TextStyle(
                                 fontSize = 12.sp,
                                 fontWeight = FontWeight(500),
