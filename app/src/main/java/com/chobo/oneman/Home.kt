@@ -7,6 +7,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -29,7 +30,29 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.composable
+
+const val mainRoute = "홈"
+
+
+fun NavController.navigateToHome() {
+    this.navigate(mainRoute)
+}
+
+fun NavGraphBuilder.home(
+    navController: NavHostController,
+    paddingValues: PaddingValues
+) {
+    composable(mainRoute) {
+        Spacer(modifier = Modifier.padding(top = paddingValues.calculateTopPadding()))
+        TopAppBar(mainRoute)
+        Home(navController = navController)
+    }
+}
+
 
 @Composable
 fun Home(navController:NavHostController) {
