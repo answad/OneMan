@@ -5,7 +5,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -28,11 +30,30 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.composable
 
 data class SupprotOptionData(
     val topText: String,
     val bottomText: String,
 )
+
+const val supportRoute = "지원"
+
+fun NavController.navigateToChatSupport() {
+    this.navigate(supportRoute)
+}
+
+fun NavGraphBuilder.support(
+    paddingValues: PaddingValues
+) {
+    composable(supportRoute) {
+        Spacer(modifier = Modifier.padding(top = paddingValues.calculateTopPadding()))
+        TopAppBar(supportRoute)
+        Support()
+    }
+}
 
 @Composable
 fun Support() {
