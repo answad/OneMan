@@ -139,44 +139,14 @@ fun BottomNavigation() {
             }
         }
     ) { paddingValues ->
-        Navigation(
+        oneManNavHost(
             navController = navController,
-            paddingValues
+            paddingValues = paddingValues,
+            startDestination = "홈"
         )
     }
 }
 
-@Composable
-fun Navigation(navController: NavHostController, paddingValues: PaddingValues) {
-    NavHost(navController = navController, startDestination = "홈") {
-        composable("홈") {
-            Spacer(modifier = Modifier.padding(top = paddingValues.calculateTopPadding()))
-            TopAppBar("홈")
-            Home(navController = navController)
-        }
-        composable("건강") {
-            Spacer(modifier = Modifier.padding(top = paddingValues.calculateTopPadding()))
-            TopAppBar("건강")
-        }
-        composable("챗봇") {
-            Spacer(modifier = Modifier.padding(top = paddingValues.calculateTopPadding()))
-            TopAppBar("챗봇")
-        }
-        composable("마음") {
-            Spacer(modifier = Modifier.padding(top = paddingValues.calculateTopPadding()))
-            TopAppBar("당신의 마음이 항상 빛나길")
-        }
-        composable("마이페이지") {
-            Spacer(modifier = Modifier.padding(top = paddingValues.calculateTopPadding()))
-            TopAppBar("마이 페이지")
-        }
-        composable("지원") {
-            Spacer(modifier = Modifier.padding(top = paddingValues.calculateTopPadding()))
-            TopAppBar("지원")
-            Support()
-        }
-    }
-}
 
 @Composable
 fun TopAppBar(text: String) {
