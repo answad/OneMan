@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">OneMan</string>
+    <string name="date">%d년 %d월 %d일</string>
+    <string name="health_state">%s님의 영양 상태</string>
+    <string name="date_week">%d년 %d월 %d주차</string>
+    <string name="week">주</string>
+    <string name="for_service">%s님을 위해 이런 서비스를 준비했어요</string>
+    <string name="support">지원</string>
+    <string name="food">식단</string>
+    <string name="mind_healing">마음치유</string>
+    <string name="near_macket">내 주변 친환경 마트</string>
+    <string name="see_more_stores">“%d”의 매장 정보 더 보기</string>
+    <string name="home">홈</string>
+    <string name="health">건강</string>
+    <string name="chat_bot">챗봇</string>
+    <string name="mind">마음</string>
+    <string name="my_page">마이페이지</string>
+    <string name="bell">종</string>
+    <string name="support_total">%d개</string>
 </resources>

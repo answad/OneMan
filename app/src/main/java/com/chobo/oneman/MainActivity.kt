@@ -30,6 +30,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -69,7 +70,6 @@ data class BottomNavigationItem(
     val unselectedIcon: Int,
 )
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BottomNavigation() {
     val navController = rememberNavController()
@@ -142,7 +142,7 @@ fun BottomNavigation() {
         oneManNavHost(
             navController = navController,
             paddingValues = paddingValues,
-            startDestination = "홈"
+            startDestination = stringResource(id = R.string.home)
         )
     }
 }
@@ -171,7 +171,7 @@ fun TopAppBar(text: String) {
             modifier = Modifier
                 .size(24.dp),
             painter = painterResource(id = R.drawable.bell),
-            contentDescription = "종"
+            contentDescription = stringResource(id = R.string.bell)
         )
     }
 }

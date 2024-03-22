@@ -21,6 +21,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -64,7 +65,7 @@ fun Health() {
                 .height(49.dp),
         ) {
             Text(
-                text = "2024년 01월 16일",
+                text = stringResource(id = R.string.date, 2023, 11, 12),
                 style = TextStyle(
                     fontSize = 14.sp,
                     fontWeight = FontWeight(500),
@@ -78,7 +79,7 @@ fun Health() {
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
-                    text = "이주영님의 영양 상태",
+                    text = stringResource(id = R.string.health_state, "이주영"),
 
                     style = TextStyle(
                         fontSize = 20.sp,
@@ -104,7 +105,7 @@ fun Health() {
                     .height(20.dp),
             ) {
                 Text(
-                    text = "2024년 1월 1주차",
+                    text = stringResource(id = R.string.date_week, 2023, 1, 1),
                     modifier = Modifier
                         .height(17.dp),
                     style = TextStyle(
@@ -142,7 +143,7 @@ fun Health() {
                             ),
                     ) {
                         Text(
-                            text = "주",
+                            text = stringResource(id = R.string.week),
                             modifier = Modifier.width(27.dp),
                             style = TextStyle(
                                 fontSize = 12.sp,

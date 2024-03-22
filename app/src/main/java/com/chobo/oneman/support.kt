@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -79,7 +80,7 @@ fun Support() {
                     .height(49.dp),
             ) {
                 Text(
-                    text = "2024년 01월 16일",
+                    text = stringResource(id = R.string.date, 2023, 11, 12),
                     style = TextStyle(
                         fontSize = 14.sp,
                         fontWeight = FontWeight(500),
@@ -93,7 +94,7 @@ fun Support() {
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(
-                        text = "이앱잼님을 위한 지원 사업",
+                        text = stringResource(id = R.string.health_state, "이주영"),
 
                         style = TextStyle(
                             fontSize = 20.sp,
@@ -103,7 +104,7 @@ fun Support() {
                         )
                     )
                     Text(
-                        text = "337개",
+                        text = stringResource(id = R.string.support_total, 225),
 
                         style = TextStyle(
                             fontSize = 14.sp,

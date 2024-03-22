@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -55,7 +56,7 @@ fun NavGraphBuilder.home(
 
 
 @Composable
-fun Home(navController:NavHostController) {
+fun Home(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -77,7 +78,7 @@ fun Home(navController:NavHostController) {
                 horizontalAlignment = Alignment.Start,
             ) {
                 Text(
-                    text = "2024년 01월 16일",
+                    text = stringResource(id = R.string.date, 2023, 12, 22),
                     modifier = Modifier
                         .width(108.dp)
                         .height(17.dp),
@@ -89,7 +90,7 @@ fun Home(navController:NavHostController) {
                     )
                 )
                 Text(
-                    text = "이앱잼님을 위해 이런 서비스를 준비했어요",
+                    text = stringResource(id = R.string.for_service,"이앱젬"),
                     modifier = Modifier
                         .width(331.dp)
                         .height(24.dp),
@@ -113,21 +114,21 @@ fun Home(navController:NavHostController) {
                 topText = "나를 위한 지원 알아보러가기",
                 bottomText = "나를 위한 지원 사업 알아보고 지원금 받자!",
                 navController = navController,
-                navigationRoute = "지원",
+                navigationRoute = stringResource(id = R.string.support),
             )
             Spacer(modifier = Modifier.size(12.dp))
             HomeServiceCard(
                 topText = "내 건강을 위해 식단 체크해보기",
                 bottomText = "식단을 기록하고 돌아보고 건강도 챙기자!",
                 navController = navController,
-                navigationRoute = "식단",
+                navigationRoute = stringResource(id = R.string.food),
             )
             Spacer(modifier = Modifier.size(12.dp))
             HomeServiceCard(
                 topText = "지친 내마음, 달래줄 곳이 필요하다면?",
                 bottomText = "무거운 이야기들, 챗봇에게 털어놓자",
                 navController = navController,
-                navigationRoute = "마음치유",
+                navigationRoute = stringResource(id = R.string.mind_healing),
             )
         }
         Spacer(modifier = Modifier.size(28.dp))
@@ -140,7 +141,7 @@ fun Home(navController:NavHostController) {
                 .padding(start = 20.dp),
         ) {
             Text(
-                text = "내 주변 친환경 마트",
+                text = stringResource(id = R.string.near_macket),
 
                 style = TextStyle(
                     fontSize = 18.sp,
@@ -349,7 +350,7 @@ fun NearbyEcoFriendlyMart(
                 .width(257.dp),
         ) {
             Text(
-                text = "“${topText}”의 매장 정보 더 보기",
+                text = stringResource(id = R.string.see_more_stores, topText),
                 modifier = Modifier
                     .width(148.dp)
                     .height(14.dp),
