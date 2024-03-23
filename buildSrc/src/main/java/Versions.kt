@@ -10,4 +10,6 @@ object Versions {
     const val junitVersion = "4.13.2"
     const val espressoVersion = "3.5.1"
 
+    const val materialVersion = "1.11.0"
+    const val appcompatVersion = "1.6.1"
 }

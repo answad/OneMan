@@ -6,11 +6,13 @@ object Dependency {
         const val NAVIGATION = "androidx.navigation:navigation-compose:${Versions.navigationVersion}"
         const val UI = "androidx.compose.ui:ui"
         const val GRPAHICS = "androidx.compose.ui:ui-graphics"
-        const val MATERAIL = "androidx.compose.material3:material3"
+        const val MATERAIL3 = "androidx.compose.material3:material3"
         const val ACTIVITY = "androidx.activity:activity-compose:${Versions.activityVersion}"
         const val BOM = "androidx.compose:compose-bom:${Versions.bomVersion}"
         const val PREVIEW = "androidx.compose.ui:ui-tooling-preview"
         const val TOOLING = "androidx.compose.ui:ui-tooling"
+        const val MATERIAL1 = "com.google.android.material:material:${Versions.materialVersion}"
+        const val APPCOMPAT = "androidx.appcompat:appcompat:${Versions.appcompatVersion}"
     }
 
     object Ktx {
