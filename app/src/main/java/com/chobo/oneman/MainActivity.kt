@@ -6,7 +6,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.compose.rememberNavController
-import com.chobo.oneman.component.BottomNavigation.BottomNavigationBar
 import com.chobo.oneman.ui.theme.OneManTheme
 
 class MainActivity : ComponentActivity() {
@@ -16,7 +15,7 @@ class MainActivity : ComponentActivity() {
             OneManTheme {
                 OneManNavHost(
                     navHostController = rememberNavController(),
-                    startDestination = stringResource(id = R.string.home)
+                    startDestination = stringResource(id = com.chobo.presentation.R.string.home)
                 )
             }
         }

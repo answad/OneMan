@@ -15,4 +15,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "OneMan"
 include(":app")
- 
+include(":presentation")
+include(":domain")
+include(":data")
