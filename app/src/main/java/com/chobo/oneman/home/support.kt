@@ -1,13 +1,11 @@
-package com.chobo.oneman
+package com.chobo.oneman.home
 
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -31,30 +29,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.composable
+import com.chobo.oneman.R
 
-data class SupprotOptionData(
+data class SupportOptionData(
     val topText: String,
     val bottomText: String,
 )
 
-const val supportRoute = "지원"
 
-fun NavController.navigateToChatSupport() {
-    this.navigate(supportRoute)
-}
-
-fun NavGraphBuilder.support(
-    paddingValues: PaddingValues
-) {
-    composable(supportRoute) {
-        Spacer(modifier = Modifier.padding(top = paddingValues.calculateTopPadding()))
-        TopAppBar(supportRoute)
-        Support()
-    }
-}
 
 @Composable
 fun Support() {
@@ -126,40 +108,40 @@ fun SelectOptionList() {
     val selectedTabIndex = remember { mutableStateOf(0) }
     val tabs = listOf("일자리", "주거", "교육", "코로나", "의료", "기타")
     val supprotList = listOf(
-        SupprotOptionData(topText = "장애학생 취업 지원", bottomText = "100만원"),
-        SupprotOptionData(topText = "소외계층 청소년을 위한 자립 생활 지원", bottomText = "주거 공간 제공"),
-        SupprotOptionData(topText = "장애학생 취업 지원", bottomText = "100만원"),
-        SupprotOptionData(topText = "소외계층 청소년을 위한 자립 생활 지원", bottomText = "주거 공간 제공")
+        SupportOptionData(topText = "장애학생 취업 지원", bottomText = "100만원"),
+        SupportOptionData(topText = "소외계층 청소년을 위한 자립 생활 지원", bottomText = "주거 공간 제공"),
+        SupportOptionData(topText = "장애학생 취업 지원", bottomText = "100만원"),
+        SupportOptionData(topText = "소외계층 청소년을 위한 자립 생활 지원", bottomText = "주거 공간 제공")
     )
     val homeList = listOf(
-        SupprotOptionData(topText = "장애학생 주거", bottomText = "10원"),
-        SupprotOptionData(topText = "장애학생 주거", bottomText = "10원"),
-        SupprotOptionData(topText = "장애학생 주거", bottomText = "10원"),
-        SupprotOptionData(topText = "장애학생 주거", bottomText = "10원"),
+        SupportOptionData(topText = "장애학생 주거", bottomText = "10원"),
+        SupportOptionData(topText = "장애학생 주거", bottomText = "10원"),
+        SupportOptionData(topText = "장애학생 주거", bottomText = "10원"),
+        SupportOptionData(topText = "장애학생 주거", bottomText = "10원"),
     )
     val eduList = listOf(
-        SupprotOptionData(topText = "초등교육 강화", bottomText = "10000만원"),
-        SupprotOptionData(topText = "초등교육 강화", bottomText = "10000만원"),
-        SupprotOptionData(topText = "초등교육 강화", bottomText = "10000만원"),
-        SupprotOptionData(topText = "초등교육 강화", bottomText = "10000만원"),
+        SupportOptionData(topText = "초등교육 강화", bottomText = "10000만원"),
+        SupportOptionData(topText = "초등교육 강화", bottomText = "10000만원"),
+        SupportOptionData(topText = "초등교육 강화", bottomText = "10000만원"),
+        SupportOptionData(topText = "초등교육 강화", bottomText = "10000만원"),
     )
     val covidList = listOf(
-        SupprotOptionData(topText = "코로나지원", bottomText = "1원"),
-        SupprotOptionData(topText = "코로나지원", bottomText = "1원"),
-        SupprotOptionData(topText = "코로나지원", bottomText = "1원"),
-        SupprotOptionData(topText = "코로나지원", bottomText = "1원"),
+        SupportOptionData(topText = "코로나지원", bottomText = "1원"),
+        SupportOptionData(topText = "코로나지원", bottomText = "1원"),
+        SupportOptionData(topText = "코로나지원", bottomText = "1원"),
+        SupportOptionData(topText = "코로나지원", bottomText = "1원"),
     )
     val medicalList = listOf(
-        SupprotOptionData(topText = "성형수술비 지원", bottomText = "10000만원"),
-        SupprotOptionData(topText = "성형수술비 지원", bottomText = "10000만원"),
-        SupprotOptionData(topText = "성형수술비 지원", bottomText = "10000만원"),
-        SupprotOptionData(topText = "성형수술비 지원", bottomText = "10000만원"),
+        SupportOptionData(topText = "성형수술비 지원", bottomText = "10000만원"),
+        SupportOptionData(topText = "성형수술비 지원", bottomText = "10000만원"),
+        SupportOptionData(topText = "성형수술비 지원", bottomText = "10000만원"),
+        SupportOptionData(topText = "성형수술비 지원", bottomText = "10000만원"),
     )
     val guitarList = listOf(
-        SupprotOptionData(topText = "기타지원금 + 피크 지원금", bottomText = "1000원"),
-        SupprotOptionData(topText = "기타지원금 + 피크 지원금", bottomText = "1000원"),
-        SupprotOptionData(topText = "기타지원금 + 피크 지원금", bottomText = "1000원"),
-        SupprotOptionData(topText = "기타지원금 + 피크 지원금", bottomText = "1000원"),
+        SupportOptionData(topText = "기타지원금 + 피크 지원금", bottomText = "1000원"),
+        SupportOptionData(topText = "기타지원금 + 피크 지원금", bottomText = "1000원"),
+        SupportOptionData(topText = "기타지원금 + 피크 지원금", bottomText = "1000원"),
+        SupportOptionData(topText = "기타지원금 + 피크 지원금", bottomText = "1000원"),
     )
     val selectedList = when (selectedTabIndex.value) {
         0 -> supprotList

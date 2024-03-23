@@ -6,8 +6,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import com.chobo.oneman.chatBot.chatBot
+import com.chobo.oneman.health.navigation.health
 import com.chobo.oneman.home.navigation.home
-import com.chobo.oneman.home.support
+import com.chobo.oneman.home.navigation.support
+import com.chobo.oneman.myPage.naviagtion.myPage
+import com.chobo.oneman.sun.navigtation.sun
 
 
 @Composable

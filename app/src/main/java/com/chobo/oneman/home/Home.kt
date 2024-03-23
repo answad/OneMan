@@ -1,4 +1,4 @@
-package com.chobo.oneman
+package com.chobo.oneman.home
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -7,7 +7,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -31,29 +30,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.composable
-
-const val mainRoute = "홈"
-
-
-fun NavController.navigateToHome() {
-    this.navigate(mainRoute)
-}
-
-fun NavGraphBuilder.home(
-    navController: NavHostController,
-    paddingValues: PaddingValues
-) {
-    composable(mainRoute) {
-        Spacer(modifier = Modifier.padding(top = paddingValues.calculateTopPadding()))
-        TopAppBar(mainRoute)
-        Home(navController = navController)
-    }
-}
-
+import com.chobo.oneman.R
+import com.chobo.oneman.chatBot.navigateToChatBot
+import com.chobo.oneman.health.navigation.navigateToHealth
+import com.chobo.oneman.home.navigation.navigateToChatSupport
 
 @Composable
 fun Home(navController: NavHostController) {
@@ -90,7 +71,7 @@ fun Home(navController: NavHostController) {
                     )
                 )
                 Text(
-                    text = stringResource(id = R.string.for_service,"이앱젬"),
+                    text = stringResource(id = R.string.for_service, "이앱젬"),
                     modifier = Modifier
                         .width(331.dp)
                         .height(24.dp),
@@ -113,22 +94,19 @@ fun Home(navController: NavHostController) {
             HomeServiceCard(
                 topText = "나를 위한 지원 알아보러가기",
                 bottomText = "나를 위한 지원 사업 알아보고 지원금 받자!",
-                navController = navController,
-                navigationRoute = stringResource(id = R.string.support),
+                navigateToDestination = { navController.navigateToChatSupport() }
             )
             Spacer(modifier = Modifier.size(12.dp))
             HomeServiceCard(
                 topText = "내 건강을 위해 식단 체크해보기",
                 bottomText = "식단을 기록하고 돌아보고 건강도 챙기자!",
-                navController = navController,
-                navigationRoute = stringResource(id = R.string.food),
+                navigateToDestination = { navController.navigateToHealth() }
             )
             Spacer(modifier = Modifier.size(12.dp))
             HomeServiceCard(
                 topText = "지친 내마음, 달래줄 곳이 필요하다면?",
                 bottomText = "무거운 이야기들, 챗봇에게 털어놓자",
-                navController = navController,
-                navigationRoute = stringResource(id = R.string.mind_healing),
+                navigateToDestination = { navController.navigateToChatBot() }
             )
         }
         Spacer(modifier = Modifier.size(28.dp))
@@ -180,8 +158,7 @@ fun Home(navController: NavHostController) {
 fun HomeServiceCard(
     topText: String,
     bottomText: String,
-    navController: NavHostController,
-    navigationRoute: String
+    navigateToDestination: () -> Unit
 ) {
 
 
@@ -194,7 +171,7 @@ fun HomeServiceCard(
             .background(color = Color(0xFFF8F8F9), shape = RoundedCornerShape(size = 16.dp))
             .padding(start = 20.dp, top = 24.dp, end = 20.dp, bottom = 24.dp)
             .clickable {
-                navController.navigate(navigationRoute)
+                navigateToDestination()
             },
     ) {
         Column(
