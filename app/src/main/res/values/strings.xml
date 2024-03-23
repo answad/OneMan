@@ -17,4 +17,5 @@
     <string name="my_page">마이페이지</string>
     <string name="bell">종</string>
     <string name="support_total">%d개</string>
+    <string name="support_list">%s님을 위한 지원 사업</string>
 </resources>

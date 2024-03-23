@@ -39,9 +39,7 @@ fun NavGraphBuilder.support(
 ) {
     composable(supportRoute) {
         Column {
-            TopAppBar(supportRoute)
-            Support()
-            BottomNavigationBar(navController = navHostController)
+            Support(navHostController)
         }
     }
 }
