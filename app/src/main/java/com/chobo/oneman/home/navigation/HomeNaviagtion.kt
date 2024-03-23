@@ -10,21 +10,21 @@ import com.chobo.oneman.component.TopAppBar
 import com.chobo.oneman.home.Home
 import com.chobo.oneman.home.Support
 
-const val mainRoute = "홈"
+const val homeRoute = "홈"
 const val supportRoute = "지원"
 
 
 fun NavController.navigateToHome() {
-    this.navigate(mainRoute)
+    this.navigate(homeRoute)
 }
 
 fun NavGraphBuilder.home(
     navController: NavHostController,
     modifier: Modifier
 ) {
-    composable(mainRoute) {
+    composable(homeRoute) {
         Spacer(modifier)
-        TopAppBar(mainRoute)
+        TopAppBar(homeRoute)
         Home(navController = navController)
     }
 }

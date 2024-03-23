@@ -6,7 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import com.chobo.oneman.chatBot.chatBot
+import com.chobo.oneman.chatBot.navigation.chatBot
 import com.chobo.oneman.health.navigation.health
 import com.chobo.oneman.home.navigation.home
 import com.chobo.oneman.home.navigation.support
