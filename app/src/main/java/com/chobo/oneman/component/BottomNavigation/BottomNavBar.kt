@@ -34,26 +34,22 @@ fun BottomNavigationBar(navController: NavHostController) {
             BottomNavigationItem(
                 navigationItemType = BottomNavItemType.HOME,
                 navController = navController,
-                modifier = Modifier.size(24.dp),
                 selectedItem = selectedItem
             )
             BottomNavigationItem(
                 navigationItemType = BottomNavItemType.HEALTH,
                 navController = navController,
-                modifier = Modifier.size(24.dp),
                 selectedItem = selectedItem
             )
             BottomNavItemChatBot()
             BottomNavigationItem(
                 navigationItemType = BottomNavItemType.SUN,
                 navController = navController,
-                modifier = Modifier.size(24.dp),
                 selectedItem = selectedItem
             )
             BottomNavigationItem(
                 navigationItemType = BottomNavItemType.PRESON,
                 navController = navController,
-                modifier = Modifier.size(24.dp),
                 selectedItem = selectedItem
             )
         }

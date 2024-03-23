@@ -4,6 +4,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,30 +30,36 @@ import com.chobo.oneman.sun.navigtation.navigateToSun
 fun BottomNavigationItem(
     navigationItemType: BottomNavItemType,
     navController: NavController,
-    modifier: Modifier,
     selectedItem: BottomNavItemType
 ) {
+    val isPressed = navigationItemType == selectedItem
+    val clickableModifier = if (!isPressed) {
+        Modifier.clickable {
+            when (navigationItemType) {
+                BottomNavItemType.HOME -> navController.navigateToHome()
+                BottomNavItemType.HEALTH -> navController.navigateToHealth()
+                BottomNavItemType.PRESON -> navController.navigateToMyPage()
+                BottomNavItemType.SUN -> navController.navigateToSun()
+                BottomNavItemType.CHATBOT -> TODO()
+            }
+        }
+    } else {
+        Modifier
+    }
+    val modifier = Modifier
+        .width(78.dp)
+        .height(42.dp)
+        .then(clickableModifier)
     Column(
         verticalArrangement = Arrangement.spacedBy(4.dp, Alignment.Top),
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
-            .width(78.dp)
-            .height(42.dp)
-            .clickable {
-                when (navigationItemType) {
-                    BottomNavItemType.HOME -> navController.navigateToHome()
-                    BottomNavItemType.HEALTH -> navController.navigateToHealth()
-                    BottomNavItemType.PRESON -> navController.navigateToMyPage()
-                    BottomNavItemType.SUN -> navController.navigateToSun()
-                    BottomNavItemType.CHATBOT -> TODO()
-                }
-            }
+        modifier = modifier
     ) {
         when (navigationItemType) {
-            BottomNavItemType.HOME -> HomeIcon(modifier, selectedItem == BottomNavItemType.HOME)
-            BottomNavItemType.HEALTH -> HealthIcon(modifier, selectedItem== BottomNavItemType.HEALTH)
-            BottomNavItemType.PRESON -> PersonIcon(modifier, selectedItem == BottomNavItemType.PRESON)
-            BottomNavItemType.SUN -> SunIcon(modifier, selectedItem == BottomNavItemType.SUN)
+            BottomNavItemType.HOME -> HomeIcon(Modifier.size(24.dp), isPressed)
+            BottomNavItemType.HEALTH -> HealthIcon(Modifier.size(24.dp), isPressed)
+            BottomNavItemType.PRESON -> PersonIcon(Modifier.size(24.dp), isPressed)
+            BottomNavItemType.SUN -> SunIcon(Modifier.size(24.dp), isPressed)
             BottomNavItemType.CHATBOT -> TODO()
         }
         Text(
