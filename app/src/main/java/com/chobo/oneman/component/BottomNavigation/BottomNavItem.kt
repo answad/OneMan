@@ -16,8 +16,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.chobo.oneman.chatBot.navigation.navigateToChatBot
-import com.chobo.oneman.component.ChatBotIcon
 import com.chobo.oneman.component.HealthIcon
 import com.chobo.oneman.component.HomeIcon
 import com.chobo.oneman.component.PersonIcon
@@ -32,7 +30,7 @@ fun BottomNavigationItem(
     navigationItemType: BottomNavItemType,
     navController: NavController,
     modifier: Modifier,
-    isPressed: Boolean
+    selectedItem: BottomNavItemType
 ) {
     Column(
         verticalArrangement = Arrangement.spacedBy(4.dp, Alignment.Top),
@@ -44,26 +42,26 @@ fun BottomNavigationItem(
                 when (navigationItemType) {
                     BottomNavItemType.HOME -> navController.navigateToHome()
                     BottomNavItemType.HEALTH -> navController.navigateToHealth()
-                    BottomNavItemType.CHATBOT -> navController.navigateToChatBot()
                     BottomNavItemType.PRESON -> navController.navigateToMyPage()
                     BottomNavItemType.SUN -> navController.navigateToSun()
+                    BottomNavItemType.CHATBOT -> TODO()
                 }
             }
     ) {
         when (navigationItemType) {
-            BottomNavItemType.HOME -> HomeIcon(modifier, isPressed)
-            BottomNavItemType.HEALTH -> HealthIcon(modifier, isPressed)
-            BottomNavItemType.CHATBOT -> ChatBotIcon(modifier, isPressed)
-            BottomNavItemType.PRESON -> PersonIcon(modifier, isPressed)
-            BottomNavItemType.SUN -> SunIcon(modifier, isPressed)
+            BottomNavItemType.HOME -> HomeIcon(modifier, selectedItem == BottomNavItemType.HOME)
+            BottomNavItemType.HEALTH -> HealthIcon(modifier, selectedItem== BottomNavItemType.HEALTH)
+            BottomNavItemType.PRESON -> PersonIcon(modifier, selectedItem == BottomNavItemType.PRESON)
+            BottomNavItemType.SUN -> SunIcon(modifier, selectedItem == BottomNavItemType.SUN)
+            BottomNavItemType.CHATBOT -> TODO()
         }
         Text(
             text = when (navigationItemType) {
                 BottomNavItemType.HOME -> "홈"
                 BottomNavItemType.HEALTH -> "건강"
-                BottomNavItemType.CHATBOT -> "챗봇"
-                BottomNavItemType.PRESON -> "챗봇"
-                BottomNavItemType.SUN -> "마이페이지"
+                BottomNavItemType.PRESON -> "마이페이지"
+                BottomNavItemType.SUN -> "마음"
+                BottomNavItemType.CHATBOT -> TODO()
             },
 
             style = TextStyle(

@@ -1,19 +1,23 @@
 package com.chobo.oneman.component
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.chobo.oneman.R
+import com.chobo.oneman.chatBot.navigation.navigateToChatBot
 
 @Composable
 fun HomeIcon(
     modifier: Modifier = Modifier,
     isPressed: Boolean = false,
 ) {
-    Icon(
+    Image(
         modifier = modifier,
         painter = painterResource(
             id = if (isPressed) R.drawable.ic_pressed_home
@@ -28,7 +32,7 @@ fun HealthIcon(
     modifier: Modifier = Modifier,
     isPressed: Boolean = false,
 ) {
-    Icon(
+    Image(
         modifier = modifier,
         painter = painterResource(
             id = if (isPressed) R.drawable.ic_pressed_health
@@ -43,7 +47,7 @@ fun SunIcon(
     modifier: Modifier = Modifier,
     isPressed: Boolean = false,
 ) {
-    Icon(
+    Image(
         modifier = modifier,
         painter = painterResource(
             id = if (isPressed) R.drawable.ic_pressed_sun
@@ -58,7 +62,7 @@ fun PersonIcon(
     modifier: Modifier = Modifier,
     isPressed: Boolean = false,
 ) {
-    Icon(
+    Image(
         modifier = modifier,
         painter = painterResource(
             id = if (isPressed) R.drawable.ic_pressed_person
@@ -72,10 +76,11 @@ fun PersonIcon(
 fun ChatBotIcon(
     modifier: Modifier = Modifier,
     isPressed: Boolean = false,
+    navController: NavHostController,
 ) {
-    Icon(
-        modifier = if (isPressed) modifier.size(48.dp)
-        else modifier.size(54.dp),
+    Image(
+        modifier = if (isPressed) modifier.size(54.dp).offset(y = (-34).dp).clickable { navController.navigateToChatBot() }
+        else modifier.size(48.dp).offset(y = (-34).dp).clickable { navController.navigateToChatBot() },
         painter = painterResource(
             id = R.drawable.ic_chatbot
         ),

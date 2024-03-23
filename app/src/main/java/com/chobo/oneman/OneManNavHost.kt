@@ -1,9 +1,6 @@
 package com.chobo.oneman
 
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.chobo.oneman.chatBot.navigation.chatBot
@@ -16,32 +13,35 @@ import com.chobo.oneman.sun.navigtation.sun
 
 @Composable
 fun OneManNavHost(
-    navController: NavHostController,
-    paddingValues: PaddingValues,
+    navHostController: NavHostController,
     startDestination: String
 ) {
     NavHost(
-        navController = navController,
+        navController = navHostController,
         startDestination = startDestination
     ) {
         home(
-           navController = navController,
-            modifier = Modifier.padding(top = paddingValues.calculateTopPadding())
+            navHostController = navHostController,
         )
         health(
-            modifier = Modifier.padding(top = paddingValues.calculateTopPadding())
-        )
+            navHostController = navHostController,
+
+            )
         chatBot(
-            modifier = Modifier.padding(top = paddingValues.calculateTopPadding())
+            navHostController = navHostController,
         )
         sun(
-            modifier = Modifier.padding(top = paddingValues.calculateTopPadding())
-        )
+            navHostController = navHostController,
+
+            )
         myPage(
-            modifier = Modifier.padding(top = paddingValues.calculateTopPadding())
-        )
+            navHostController = navHostController,
+
+            )
         support(
-            modifier = Modifier.padding(top = paddingValues.calculateTopPadding())
-        )
+            navHostController = navHostController,
+
+
+            )
     }
 }

@@ -9,7 +9,7 @@
     <string name="food">식단</string>
     <string name="mind_healing">마음치유</string>
     <string name="near_macket">내 주변 친환경 마트</string>
-    <string name="see_more_stores">“%d”의 매장 정보 더 보기</string>
+    <string name="see_more_stores">“%s”의 매장 정보 더 보기</string>
     <string name="home">홈</string>
     <string name="health">건강</string>
     <string name="chat_bot">챗봇</string>

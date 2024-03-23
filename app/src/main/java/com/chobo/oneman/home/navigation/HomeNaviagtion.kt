@@ -1,11 +1,15 @@
 package com.chobo.oneman.home.navigation
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
+import com.chobo.oneman.component.BottomNavigation.BottomNavigationBar
 import com.chobo.oneman.component.TopAppBar
 import com.chobo.oneman.home.Home
 import com.chobo.oneman.home.Support
@@ -19,13 +23,10 @@ fun NavController.navigateToHome() {
 }
 
 fun NavGraphBuilder.home(
-    navController: NavHostController,
-    modifier: Modifier
+    navHostController: NavHostController,
 ) {
     composable(homeRoute) {
-        Spacer(modifier)
-        TopAppBar(homeRoute)
-        Home(navController = navController)
+        Home(navController = navHostController)
     }
 }
 
@@ -34,11 +35,13 @@ fun NavController.navigateToChatSupport() {
 }
 
 fun NavGraphBuilder.support(
-    modifier: Modifier
+    navHostController :NavHostController
 ) {
     composable(supportRoute) {
-        Spacer(modifier)
-        TopAppBar(supportRoute)
-        Support()
+        Column {
+            TopAppBar(supportRoute)
+            Support()
+            BottomNavigationBar(navController = navHostController)
+        }
     }
 }
