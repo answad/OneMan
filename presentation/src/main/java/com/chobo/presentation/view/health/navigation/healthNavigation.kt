@@ -6,6 +6,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.chobo.presentation.view.component.BottomNavigation.BottomNavigationBar
+import com.chobo.presentation.view.component.BottomNavigation.NavViewModel
 import com.chobo.presentation.view.component.TopAppBar
 
 
@@ -16,12 +17,16 @@ fun NavController.navigateToHealth() {
 }
 
 fun NavGraphBuilder.health(
-    navHostController : NavHostController
+    navHostController: NavHostController,
+    navViewModel: NavViewModel
 ) {
     composable(Health) {
         Column {
             TopAppBar(Health)
-            BottomNavigationBar(navController = navHostController)
+            BottomNavigationBar(
+                navController = navHostController,
+                navViewModel = navViewModel
+            )
         }
     }
 }

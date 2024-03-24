@@ -6,6 +6,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.chobo.presentation.view.component.BottomNavigation.BottomNavigationBar
+import com.chobo.presentation.view.component.BottomNavigation.NavViewModel
 import com.chobo.presentation.view.component.TopAppBar
 
 const val chatBotRoute = "챗봇"
@@ -16,11 +17,15 @@ fun NavController.navigateToChatBot() {
 
 fun NavGraphBuilder.chatBot(
     navHostController: NavHostController,
+    navViewModel: NavViewModel,
 ) {
     composable(chatBotRoute) {
         Column {
             TopAppBar(chatBotRoute)
-            BottomNavigationBar(navController = navHostController)
+            BottomNavigationBar(
+                navController = navHostController,
+                navViewModel = navViewModel
+            )
         }
     }
 }

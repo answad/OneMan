@@ -6,6 +6,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.chobo.presentation.view.component.BottomNavigation.BottomNavigationBar
+import com.chobo.presentation.view.component.BottomNavigation.NavViewModel
 import com.chobo.presentation.view.component.TopAppBar
 
 const val myPageRoute = "마이 페이지"
@@ -15,12 +16,16 @@ fun NavController.navigateToMyPage() {
 }
 
 fun NavGraphBuilder.myPage(
-    navHostController : NavHostController,
-    ) {
+    navHostController: NavHostController,
+    navViewModel: NavViewModel,
+) {
     composable(myPageRoute) {
         Column {
             TopAppBar(myPageRoute)
-            BottomNavigationBar(navController = navHostController)
+            BottomNavigationBar(
+                navController = navHostController,
+                navViewModel = navViewModel
+            )
         }
     }
 }
