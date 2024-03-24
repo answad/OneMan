@@ -3,12 +3,12 @@ package com.chobo.oneman
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import com.chobo.presentation.chatBot.navigation.chatBot
-import com.chobo.presentation.health.navigation.health
-import com.chobo.presentation.home.navigation.home
-import com.chobo.presentation.home.navigation.support
-import com.chobo.presentation.myPage.naviagtion.myPage
-import com.chobo.presentation.sun.navigtation.sun
+import com.chobo.presentation.view.chatBot.navigation.chatBot
+import com.chobo.presentation.view.health.navigation.health
+import com.chobo.presentation.view.home.navigation.home
+import com.chobo.presentation.view.home.navigation.support
+import com.chobo.presentation.view.myPage.naviagtion.myPage
+import com.chobo.presentation.view.sun.navigtation.sun
 
 
 @Composable

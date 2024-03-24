@@ -5,10 +5,10 @@ plugins {
 
 android {
     namespace = "com.chobo.domain"
-    compileSdk = 34
+    compileSdk = ProjectProperties.compileSdk
 
     defaultConfig {
-        minSdk = 33
+        minSdk = ProjectProperties.minSdk
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -28,7 +28,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = ProjectProperties.jvmTarget
     }
 }
 

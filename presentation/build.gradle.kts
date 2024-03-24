@@ -5,10 +5,10 @@ plugins {
 
 android {
     namespace = "com.chobo.presentation"
-    compileSdk = 34
+    compileSdk = ProjectProperties.compileSdk
 
     defaultConfig {
-        minSdk = 33
+        minSdk = ProjectProperties.minSdk
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -23,17 +23,23 @@ android {
             )
         }
     }
+
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = ProjectProperties.kotlinCompilerExtensionVersion
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = ProjectProperties.jvmTarget
     }
 }
 
 dependencies {
-    implementation(project(":data"))
     implementation(project(":domain"))
     implementation(Dependency.Compose.ALPHA)
     implementation(Dependency.Compose.NAVIGATION)

@@ -27,5 +27,4 @@ object Dependency {
         const val UIJUNIT = "androidx.compose.ui:ui-test-junit4"
         const val MANIFEST = "androidx.compose.ui:ui-test-manifest"
     }
-
 }
