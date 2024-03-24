@@ -1,5 +1,6 @@
 package com.chobo.presentation.view.component
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -22,6 +23,7 @@ import com.chobo.presentation.R
 
 @Composable
 fun TopAppBar(text: String) {
+    Log.d("recomposition","TopAppBar")
     Row(
         modifier = Modifier
             .fillMaxWidth()

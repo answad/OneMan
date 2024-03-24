@@ -1,6 +1,5 @@
 package com.chobo.presentation.view.home.component
 
-import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -84,7 +83,6 @@ fun SelectOptionList() {
         5 -> guitarList
         else -> emptyList()
     }
-    Log.d("erew", selectedTabIndex.toString())
     TabRow(
         selectedTabIndex = selectedTabIndex.value,
     ) {
@@ -120,7 +118,6 @@ fun SelectOptionList() {
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxWidth()
-            .height(428.dp)
             .padding(start = 20.dp, top = 12.dp, end = 20.dp, bottom = 12.dp),
     ) {
         selectedList.forEach {

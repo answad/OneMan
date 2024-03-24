@@ -10,16 +10,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.currentBackStackEntryAsState
 import com.chobo.presentation.view.component.ChatBotIcon
 
 @Composable
-fun BottomNavigationBar(navController: NavHostController) {
-    val navBackStackEntry = navController.currentBackStackEntryAsState().value
-    val currentDestination = navBackStackEntry?.destination?.route
-    val selectedItem = BottomNavItemType.fromRoute(currentDestination)
-
+fun BottomNavigationBar(navController: NavHostController,navViewModel: NavViewModel) {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.BottomCenter
@@ -33,26 +29,26 @@ fun BottomNavigationBar(navController: NavHostController) {
             BottomNavigationItem(
                 navigationItemType = BottomNavItemType.HOME,
                 navController = navController,
-                selectedItem = selectedItem
+                navViewModel = navViewModel
             )
             BottomNavigationItem(
                 navigationItemType = BottomNavItemType.HEALTH,
                 navController = navController,
-                selectedItem = selectedItem
+                navViewModel = navViewModel
             )
             BottomNavItemChatBot(
-                selectedItem = selectedItem,
-                navController = navController
+                navController = navController,
+                navViewModel = navViewModel
             )
             BottomNavigationItem(
                 navigationItemType = BottomNavItemType.SUN,
                 navController = navController,
-                selectedItem = selectedItem
+                navViewModel = navViewModel
             )
             BottomNavigationItem(
                 navigationItemType = BottomNavItemType.PRESON,
                 navController = navController,
-                selectedItem = selectedItem
+                navViewModel = navViewModel
             )
         }
     }

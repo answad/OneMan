@@ -30,26 +30,24 @@ import com.chobo.presentation.view.sun.navigtation.navigateToSun
 fun BottomNavigationItem(
     navigationItemType: BottomNavItemType,
     navController: NavController,
-    selectedItem: BottomNavItemType
+    navViewModel: NavViewModel
 ) {
-    val isPressed = navigationItemType == selectedItem
+
+    val isPressed = navViewModel.currentRoute == navigationItemType
+
     val clickableModifier = if (!isPressed) {
         Modifier.clickable {
-            when (navigationItemType) {
-                BottomNavItemType.HOME -> navController.navigateToHome()
-                BottomNavItemType.HEALTH -> navController.navigateToHealth()
-                BottomNavItemType.PRESON -> navController.navigateToMyPage()
-                BottomNavItemType.SUN -> navController.navigateToSun()
-                BottomNavItemType.CHATBOT -> TODO()
-            }
+            navViewModel.navigateTo(navigationItemType, navController)
         }
     } else {
         Modifier
     }
+
     val modifier = Modifier
         .width(78.dp)
         .height(42.dp)
         .then(clickableModifier)
+
     Column(
         verticalArrangement = Arrangement.spacedBy(4.dp, Alignment.Top),
         horizontalAlignment = Alignment.CenterHorizontally,

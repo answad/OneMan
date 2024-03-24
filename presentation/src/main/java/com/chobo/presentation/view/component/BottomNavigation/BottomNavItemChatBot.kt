@@ -17,16 +17,22 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.chobo.presentation.view.chatBot.navigation.navigateToChatBot
 
 @Composable
 fun BottomNavItemChatBot(
-    selectedItem: BottomNavItemType,
-    navController: NavController
+    navController: NavController,
+    navViewModel: NavViewModel
 ) {
-    val isPressed = selectedItem == BottomNavItemType.CHATBOT
-    val modifier = if (isPressed) Modifier.width(78.dp).height(42.dp)
-        else Modifier.width(78.dp).height(42.dp).clickable { navController.navigateToChatBot() }
+    val isPressed = navViewModel.currentRoute == BottomNavItemType.CHATBOT
+    val modifier = if (isPressed) Modifier
+        .width(78.dp)
+        .height(42.dp)
+    else Modifier
+        .width(78.dp)
+        .height(42.dp)
+        .clickable {
+            navViewModel.navigateTo(BottomNavItemType.CHATBOT, navController)
+        }
     Column(
         verticalArrangement = Arrangement.spacedBy(4.dp, Alignment.Top),
         horizontalAlignment = Alignment.CenterHorizontally,
