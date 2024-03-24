@@ -21,10 +21,6 @@ import com.chobo.presentation.view.component.HealthIcon
 import com.chobo.presentation.view.component.HomeIcon
 import com.chobo.presentation.view.component.PersonIcon
 import com.chobo.presentation.view.component.SunIcon
-import com.chobo.presentation.view.health.navigation.navigateToHealth
-import com.chobo.presentation.view.home.navigation.navigateToHome
-import com.chobo.presentation.view.myPage.naviagtion.navigateToMyPage
-import com.chobo.presentation.view.sun.navigtation.navigateToSun
 
 @Composable
 fun BottomNavigationItem(
