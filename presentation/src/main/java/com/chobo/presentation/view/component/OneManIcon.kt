@@ -1,16 +1,13 @@
 package com.chobo.presentation.view.component
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
 import com.chobo.presentation.R
-import com.chobo.presentation.view.chatBot.navigation.navigateToChatBot
 
 @Composable
 fun HomeIcon(
@@ -76,11 +73,10 @@ fun PersonIcon(
 fun ChatBotIcon(
     modifier: Modifier = Modifier,
     isPressed: Boolean = false,
-    navController: NavHostController,
 ) {
     Image(
-        modifier = if (isPressed) modifier.size(54.dp).offset(y = (-34).dp).clickable { navController.navigateToChatBot() }
-        else modifier.size(48.dp).offset(y = (-34).dp).clickable { navController.navigateToChatBot() },
+        modifier = if (isPressed) modifier.size(54.dp).offset(y = (-34).dp)
+        else modifier.size(48.dp).offset(y = (-34).dp),
         painter = painterResource(
             id = R.drawable.ic_chatbot
         ),

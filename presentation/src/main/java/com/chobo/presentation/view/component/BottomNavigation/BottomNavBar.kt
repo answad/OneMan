@@ -24,7 +24,7 @@ fun BottomNavigationBar(navController: NavHostController) {
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.BottomCenter
     ) {
-        ChatBotIcon(navController = navController, modifier = Modifier.offset(y = 15.dp))
+        ChatBotIcon(modifier = Modifier.offset(y = 15.dp))
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically,
@@ -40,7 +40,10 @@ fun BottomNavigationBar(navController: NavHostController) {
                 navController = navController,
                 selectedItem = selectedItem
             )
-            BottomNavItemChatBot()
+            BottomNavItemChatBot(
+                selectedItem = selectedItem,
+                navController = navController
+            )
             BottomNavigationItem(
                 navigationItemType = BottomNavItemType.SUN,
                 navController = navController,

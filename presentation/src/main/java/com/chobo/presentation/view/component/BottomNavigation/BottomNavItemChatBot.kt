@@ -1,5 +1,6 @@
 package com.chobo.presentation.view.component.BottomNavigation
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -15,15 +16,21 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.chobo.presentation.view.chatBot.navigation.navigateToChatBot
 
 @Composable
-fun BottomNavItemChatBot() {
+fun BottomNavItemChatBot(
+    selectedItem: BottomNavItemType,
+    navController: NavController
+) {
+    val isPressed = selectedItem == BottomNavItemType.CHATBOT
+    val modifier = if (isPressed) Modifier.width(78.dp).height(42.dp)
+        else Modifier.width(78.dp).height(42.dp).clickable { navController.navigateToChatBot() }
     Column(
         verticalArrangement = Arrangement.spacedBy(4.dp, Alignment.Top),
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
-            .width(78.dp)
-            .height(42.dp)
+        modifier = modifier
     ) {
         Spacer(
             modifier = Modifier
