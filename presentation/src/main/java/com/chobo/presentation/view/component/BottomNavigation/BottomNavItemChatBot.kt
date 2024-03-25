@@ -23,7 +23,7 @@ fun BottomNavItemChatBot(
     navController: NavController,
     navViewModel: NavViewModel
 ) {
-    val isPressed = navViewModel.currentRoute == BottomNavItemType.CHATBOT
+    val isPressed = navViewModel.getCurrentRoute() == BottomNavItemType.CHATBOT
     val modifier = if (isPressed) Modifier
         .width(78.dp)
         .height(42.dp)

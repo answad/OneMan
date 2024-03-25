@@ -9,7 +9,7 @@ import com.chobo.presentation.view.myPage.naviagtion.navigateToMyPage
 import com.chobo.presentation.view.sun.navigtation.navigateToSun
 
 class NavViewModel : ViewModel() {
-    private var currentRoute: Enum<BottomNavItemType> = BottomNavItemType.HOME
+    private var currentRoute: BottomNavItemType = BottomNavItemType.HOME
 
     fun getCurrentRoute(): Enum<BottomNavItemType> {
         return currentRoute
