@@ -3,7 +3,6 @@ package com.chobo.presentation.view.myPage.naviagtion
 import androidx.compose.foundation.layout.Column
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.chobo.presentation.view.component.BottomNavigation.BottomNavigationBar
 import com.chobo.presentation.view.component.BottomNavigation.NavViewModel
@@ -16,14 +15,12 @@ fun NavController.navigateToMyPage() {
 }
 
 fun NavGraphBuilder.myPage(
-    navHostController: NavHostController,
     navViewModel: NavViewModel,
 ) {
     composable(myPageRoute) {
         Column {
             TopAppBar(myPageRoute)
             BottomNavigationBar(
-                navController = navHostController,
                 navViewModel = navViewModel
             )
         }

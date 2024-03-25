@@ -11,10 +11,17 @@ import com.chobo.presentation.view.sun.navigtation.navigateToSun
 class NavViewModel : ViewModel() {
     private var currentRoute: BottomNavItemType = BottomNavItemType.HOME
 
+    private lateinit var _navController: NavController
     fun getCurrentRoute(): Enum<BottomNavItemType> {
         return currentRoute
     }
 
+    fun SetNavController(navController: NavController){
+        _navController = navController
+    }
+    fun getNavController(): NavController {
+        return _navController
+    }
     fun navigateTo(
         navigationItemType: BottomNavItemType,
         navController: NavController

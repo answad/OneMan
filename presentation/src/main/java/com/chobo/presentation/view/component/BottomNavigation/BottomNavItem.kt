@@ -16,7 +16,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 import com.chobo.presentation.view.component.HealthIcon
 import com.chobo.presentation.view.component.HomeIcon
 import com.chobo.presentation.view.component.PersonIcon
@@ -25,7 +24,6 @@ import com.chobo.presentation.view.component.SunIcon
 @Composable
 fun BottomNavigationItem(
     navigationItemType: BottomNavItemType,
-    navController: NavController,
     navViewModel: NavViewModel
 ) {
 
@@ -33,7 +31,7 @@ fun BottomNavigationItem(
 
     val clickableModifier = if (!isPressed) {
         Modifier.clickable {
-            navViewModel.navigateTo(navigationItemType, navController)
+            navViewModel.navigateTo(navigationItemType, navViewModel.getNavController())
         }
     } else {
         Modifier

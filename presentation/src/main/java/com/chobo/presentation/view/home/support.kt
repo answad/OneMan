@@ -7,7 +7,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
 import com.chobo.presentation.view.component.BottomNavigation.BottomNavigationBar
 import com.chobo.presentation.view.component.BottomNavigation.NavViewModel
 import com.chobo.presentation.view.component.TopAppBar
@@ -16,7 +15,7 @@ import com.chobo.presentation.view.home.component.SupportMain
 import com.chobo.presentation.view.home.navigation.supportRoute
 
 @Composable
-fun Support(navHostController: NavHostController, navViewModel: NavViewModel) {
+fun Support(navViewModel: NavViewModel) {
     TopAppBar(supportRoute)
     Column(
         verticalArrangement = Arrangement.spacedBy(12.dp, Alignment.Top),
@@ -28,7 +27,6 @@ fun Support(navHostController: NavHostController, navViewModel: NavViewModel) {
         SelectOptionList()
     }
     BottomNavigationBar(
-        navController = navHostController,
         navViewModel = navViewModel
     )
 }

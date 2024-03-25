@@ -1,6 +1,7 @@
 package com.chobo.oneman
 
 import androidx.compose.runtime.Composable
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.chobo.presentation.view.chatBot.navigation.chatBot
@@ -15,36 +16,31 @@ import com.chobo.presentation.view.sun.navigtation.sun
 @Composable
 fun OneManNavHost(
     navHostController: NavHostController,
-    startDestination: String,
-    navViewModel: NavViewModel
+    startDestination: String
 ) {
+    val NavViewModel = viewModel<NavViewModel>()
+    NavViewModel.SetNavController(navHostController)
     NavHost(
-        navController = navHostController,
-        startDestination = startDestination
+        startDestination = startDestination,
+        navController = navHostController
     ) {
         home(
-            navHostController = navHostController,
-            navViewModel = navViewModel
+            navViewModel = NavViewModel,
         )
         health(
-            navHostController = navHostController,
-            navViewModel = navViewModel
+            navViewModel = NavViewModel
         )
         chatBot(
-            navHostController = navHostController,
-            navViewModel = navViewModel
+            navViewModel = NavViewModel
         )
         sun(
-            navHostController = navHostController,
-            navViewModel = navViewModel
+            navViewModel = NavViewModel
         )
         myPage(
-            navHostController = navHostController,
-            navViewModel = navViewModel
+            navViewModel = NavViewModel
         )
         support(
-            navHostController = navHostController,
-            navViewModel = navViewModel
+            navViewModel = NavViewModel
         )
     }
 }

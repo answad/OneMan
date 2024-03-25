@@ -16,11 +16,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 
 @Composable
 fun BottomNavItemChatBot(
-    navController: NavController,
     navViewModel: NavViewModel
 ) {
     val isPressed = navViewModel.getCurrentRoute() == BottomNavItemType.CHATBOT
@@ -31,7 +29,7 @@ fun BottomNavItemChatBot(
         .width(78.dp)
         .height(42.dp)
         .clickable {
-            navViewModel.navigateTo(BottomNavItemType.CHATBOT, navController)
+            navViewModel.navigateTo(BottomNavItemType.CHATBOT, navViewModel.getNavController())
         }
     Column(
         verticalArrangement = Arrangement.spacedBy(4.dp, Alignment.Top),
