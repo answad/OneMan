@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.chobo.presentation.view.component.BottomNavigation.BottomNavigationBar
-import com.chobo.presentation.view.component.BottomNavigation.NavViewModel
+import com.chobo.presentation.viewmodel.NavViewModel
 import com.chobo.presentation.view.component.TopAppBar
 import com.chobo.presentation.view.home.component.HomeMain
 import com.chobo.presentation.view.home.navigation.homeRoute

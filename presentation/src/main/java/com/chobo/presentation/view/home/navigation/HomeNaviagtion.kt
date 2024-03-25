@@ -3,7 +3,7 @@ package com.chobo.presentation.view.home.navigation
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.chobo.presentation.view.component.BottomNavigation.NavViewModel
+import com.chobo.presentation.viewmodel.NavViewModel
 import com.chobo.presentation.view.home.Home
 import com.chobo.presentation.view.home.Support
 

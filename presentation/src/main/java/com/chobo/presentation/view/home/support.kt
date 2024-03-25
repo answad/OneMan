@@ -8,7 +8,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.chobo.presentation.view.component.BottomNavigation.BottomNavigationBar
-import com.chobo.presentation.view.component.BottomNavigation.NavViewModel
+import com.chobo.presentation.viewmodel.NavViewModel
 import com.chobo.presentation.view.component.TopAppBar
 import com.chobo.presentation.view.home.component.SelectOptionList
 import com.chobo.presentation.view.home.component.SupportMain

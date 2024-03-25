@@ -1,8 +1,9 @@
-package com.chobo.presentation.view.component.BottomNavigation
+package com.chobo.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
 import com.chobo.presentation.view.chatBot.navigation.navigateToChatBot
+import com.chobo.presentation.view.component.BottomNavigation.BottomNavItemType
 import com.chobo.presentation.view.health.navigation.navigateToHealth
 import com.chobo.presentation.view.home.navigation.navigateToHome
 import com.chobo.presentation.view.myPage.naviagtion.navigateToMyPage

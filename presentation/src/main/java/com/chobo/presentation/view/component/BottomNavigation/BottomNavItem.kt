@@ -20,6 +20,7 @@ import com.chobo.presentation.view.component.HealthIcon
 import com.chobo.presentation.view.component.HomeIcon
 import com.chobo.presentation.view.component.PersonIcon
 import com.chobo.presentation.view.component.SunIcon
+import com.chobo.presentation.viewmodel.NavViewModel
 
 @Composable
 fun BottomNavigationItem(

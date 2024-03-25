@@ -5,7 +5,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.chobo.presentation.view.chatBot.navigation.chatBot
-import com.chobo.presentation.view.component.BottomNavigation.NavViewModel
+import com.chobo.presentation.viewmodel.NavViewModel
 import com.chobo.presentation.view.health.navigation.health
 import com.chobo.presentation.view.home.navigation.home
 import com.chobo.presentation.view.home.navigation.support
