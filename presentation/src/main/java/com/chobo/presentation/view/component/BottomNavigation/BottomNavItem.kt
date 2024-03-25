@@ -29,7 +29,7 @@ fun BottomNavigationItem(
     navViewModel: NavViewModel
 ) {
 
-    val isPressed = navViewModel.currentRoute == navigationItemType
+    val isPressed = navViewModel.getCurrentRoute() == navigationItemType
 
     val clickableModifier = if (!isPressed) {
         Modifier.clickable {
