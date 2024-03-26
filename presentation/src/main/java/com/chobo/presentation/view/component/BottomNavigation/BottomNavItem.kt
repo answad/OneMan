@@ -16,6 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.chobo.presentation.view.component.BottomNavigation.BottomNavItemType.*
 import com.chobo.presentation.view.component.HealthIcon
 import com.chobo.presentation.view.component.HomeIcon
 import com.chobo.presentation.view.component.PersonIcon
@@ -49,19 +50,19 @@ fun BottomNavigationItem(
         modifier = modifier
     ) {
         when (navigationItemType) {
-            BottomNavItemType.HOME -> HomeIcon(Modifier.size(24.dp), isPressed)
-            BottomNavItemType.HEALTH -> HealthIcon(Modifier.size(24.dp), isPressed)
-            BottomNavItemType.PRESON -> PersonIcon(Modifier.size(24.dp), isPressed)
-            BottomNavItemType.SUN -> SunIcon(Modifier.size(24.dp), isPressed)
-            BottomNavItemType.CHATBOT -> TODO()
+            HOME -> HomeIcon(Modifier.size(24.dp), isPressed)
+            HEALTH -> HealthIcon(Modifier.size(24.dp), isPressed)
+            PRESON -> PersonIcon(Modifier.size(24.dp), isPressed)
+            SUN -> SunIcon(Modifier.size(24.dp), isPressed)
+            else -> {}
         }
         Text(
             text = when (navigationItemType) {
-                BottomNavItemType.HOME -> "홈"
-                BottomNavItemType.HEALTH -> "건강"
-                BottomNavItemType.PRESON -> "마이페이지"
-                BottomNavItemType.SUN -> "마음"
-                BottomNavItemType.CHATBOT -> TODO()
+                HOME -> "홈"
+                HEALTH -> "건강"
+                PRESON -> "마이페이지"
+                SUN -> "마음"
+                CHATBOT -> "쳇봇"
             },
 
             style = TextStyle(

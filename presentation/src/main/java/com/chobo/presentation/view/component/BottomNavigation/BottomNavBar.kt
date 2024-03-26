@@ -33,7 +33,8 @@ fun BottomNavigationBar(navViewModel: NavViewModel) {
                 navigationItemType = BottomNavItemType.HEALTH,
                 navViewModel = navViewModel
             )
-            BottomNavItemChatBot(
+            BottomNavigationItem(
+                navigationItemType = BottomNavItemType.CHATBOT,
                 navViewModel = navViewModel
             )
             BottomNavigationItem(
