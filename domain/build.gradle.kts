@@ -34,8 +34,8 @@ android {
 
 dependencies {
     implementation(Dependency.Ktx.CORE)
-    implementation(Dependency.Compose.APPCOMPAT)
-    implementation(Dependency.Compose.MATERIAL1)
+    implementation(Dependency.Common.APPCOMPAT)
+    implementation(Dependency.Common.MATERIAL1)
     testImplementation(Dependency.Test.junit)
     androidTestImplementation(Dependency.Test.EXTJUNIT)
     androidTestImplementation(Dependency.Test.CORE)

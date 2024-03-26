@@ -1,7 +1,7 @@
 object Dependency {
 
 
-    object Compose {
+    object Common {
         const val ALPHA = "androidx.compose.material3:material3:${Versions.composeVersion}"
         const val NAVIGATION = "androidx.navigation:navigation-compose:${Versions.navigationVersion}"
         const val UI = "androidx.compose.ui:ui"
@@ -13,6 +13,7 @@ object Dependency {
         const val TOOLING = "androidx.compose.ui:ui-tooling"
         const val MATERIAL1 = "com.google.android.material:material:${Versions.materialVersion}"
         const val APPCOMPAT = "androidx.appcompat:appcompat:${Versions.appcompatVersion}"
+        const val SPLASHSCREEN = "androidx.core:core-splashscreen:${Versions.splashScreen}"
     }
 
     object Ktx {

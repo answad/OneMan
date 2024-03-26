@@ -1,4 +1,5 @@
 object Versions {
+    const val splashScreen = "1.0.0"
     const val composeVersion = "1.3.0-alpha01"
     const val navigationVersion = "2.7.7"
     const val bomVersion = "2023.03.00"
