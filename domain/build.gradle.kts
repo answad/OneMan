@@ -36,6 +36,7 @@ dependencies {
     implementation(Dependency.Ktx.CORE)
     implementation(Dependency.Common.APPCOMPAT)
     implementation(Dependency.Common.MATERIAL1)
+    implementation(project(":data"))
     testImplementation(Dependency.Test.junit)
     androidTestImplementation(Dependency.Test.EXTJUNIT)
     androidTestImplementation(Dependency.Test.CORE)

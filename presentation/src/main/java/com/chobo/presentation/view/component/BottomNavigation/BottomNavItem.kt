@@ -3,6 +3,7 @@ package com.chobo.presentation.view.component.BottomNavigation
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -54,7 +55,7 @@ fun BottomNavigationItem(
             HEALTH -> HealthIcon(Modifier.size(24.dp), isPressed)
             PRESON -> PersonIcon(Modifier.size(24.dp), isPressed)
             SUN -> SunIcon(Modifier.size(24.dp), isPressed)
-            else -> {}
+            CHATBOT -> Spacer(modifier = Modifier.size(24.dp))
         }
         Text(
             text = when (navigationItemType) {
@@ -72,6 +73,5 @@ fun BottomNavigationItem(
                 textAlign = TextAlign.Center,
             )
         )
-
     }
 }

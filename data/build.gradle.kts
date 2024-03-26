@@ -37,6 +37,7 @@ dependencies {
     implementation(Dependency.Ktx.CORE)
     implementation(Dependency.Common.APPCOMPAT)
     implementation(Dependency.Common.MATERIAL1)
+    implementation("androidx.room:room-common:2.6.1")
     testImplementation(Dependency.Test.junit)
     androidTestImplementation(Dependency.Test.EXTJUNIT)
     androidTestImplementation(Dependency.Test.CORE)
