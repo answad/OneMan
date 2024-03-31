@@ -6,14 +6,18 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.ViewModel
 import com.chobo.presentation.view.component.BottomNavigation.BottomNavigationBar
 import com.chobo.presentation.viewmodel.NavViewModel
 import com.chobo.presentation.view.component.TopAppBar
 import com.chobo.presentation.view.home.component.HomeMain
 import com.chobo.presentation.view.home.navigation.homeRoute
+import com.chobo.presentation.viewmodel.HomeViewModel
 
 @Composable
-fun Home(navViewModel: NavViewModel) {
+fun Home(
+    navViewModel: NavViewModel,
+) {
     TopAppBar(homeRoute)
     Column(
         modifier = Modifier

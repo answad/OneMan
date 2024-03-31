@@ -4,9 +4,9 @@ import com.chobo.data.dao.MartDao
 import com.chobo.data.entity.MartEntity
 import com.chobo.domain.repository.MartRepository
 
-class MartRepositoryImpl(private val martDao: MartDao) :MartRepository {
+class MartRepositoryImpl(private val martDao: MartDao) : MartRepository {
     override suspend fun getAllUsers(): List<MartEntity> {
-        return  martDao.getAllUsers()
+        return martDao.getAllUsers()
     }
 
     override suspend fun getMartById(martId: Long): MartEntity? {
