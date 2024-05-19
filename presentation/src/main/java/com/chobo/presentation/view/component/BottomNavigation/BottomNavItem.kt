@@ -40,21 +40,19 @@ fun BottomNavigationItem(
         Modifier
     }
 
-    val modifier = Modifier
-        .width(78.dp)
-        .height(42.dp)
-        .then(clickableModifier)
-
     Column(
         verticalArrangement = Arrangement.spacedBy(4.dp, Alignment.Top),
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = modifier
+        modifier = Modifier
+            .width(78.dp)
+            .height(42.dp)
+            .then(clickableModifier)
     ) {
         when (navigationItemType) {
-            HOME -> HomeIcon(Modifier.size(24.dp), isPressed)
-            HEALTH -> HealthIcon(Modifier.size(24.dp), isPressed)
-            PRESON -> PersonIcon(Modifier.size(24.dp), isPressed)
-            SUN -> SunIcon(Modifier.size(24.dp), isPressed)
+            HOME -> HomeIcon(isPressed = isPressed)
+            HEALTH -> HealthIcon(isPressed = isPressed)
+            PRESON -> PersonIcon(isPressed = isPressed)
+            SUN -> SunIcon(isPressed = isPressed)
             CHATBOT -> Spacer(modifier = Modifier.size(24.dp))
         }
         Text(
