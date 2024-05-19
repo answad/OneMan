@@ -15,7 +15,7 @@ fun HomeIcon(
     isPressed: Boolean = false,
 ) {
     Image(
-        modifier = modifier,
+        modifier = modifier.size(24.dp),
         painter = painterResource(
             id = if (isPressed) R.drawable.ic_pressed_home
             else R.drawable.ic_home
@@ -30,7 +30,7 @@ fun HealthIcon(
     isPressed: Boolean = false,
 ) {
     Image(
-        modifier = modifier,
+        modifier = modifier.size(24.dp),
         painter = painterResource(
             id = if (isPressed) R.drawable.ic_pressed_health
             else R.drawable.ic_health
@@ -45,7 +45,7 @@ fun SunIcon(
     isPressed: Boolean = false,
 ) {
     Image(
-        modifier = modifier,
+        modifier = modifier.size(24.dp),
         painter = painterResource(
             id = if (isPressed) R.drawable.ic_pressed_sun
             else R.drawable.ic_sun
@@ -60,7 +60,7 @@ fun PersonIcon(
     isPressed: Boolean = false,
 ) {
     Image(
-        modifier = modifier,
+        modifier = modifier.size(24.dp),
         painter = painterResource(
             id = if (isPressed) R.drawable.ic_pressed_person
             else R.drawable.ic_person
