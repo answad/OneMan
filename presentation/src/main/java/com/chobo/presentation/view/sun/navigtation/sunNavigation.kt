@@ -16,15 +16,11 @@ fun NavController.navigateToSun() {
 }
 
 fun NavGraphBuilder.sun(
-    navViewModel: NavViewModel
 ) {
     composable(SunRoute) {
         Log.d("sun","sun")
         Column {
             TopAppBar(SunRoute)
-            BottomNavigationBar(
-                navViewModel = navViewModel
-            )
         }
     }
 }

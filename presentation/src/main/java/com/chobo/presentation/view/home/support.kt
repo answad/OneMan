@@ -15,7 +15,7 @@ import com.chobo.presentation.view.home.component.SupportMain
 import com.chobo.presentation.view.home.navigation.supportRoute
 
 @Composable
-fun Support(navViewModel: NavViewModel) {
+fun Support() {
     TopAppBar(supportRoute)
     Column(
         verticalArrangement = Arrangement.spacedBy(12.dp, Alignment.Top),
@@ -26,7 +26,4 @@ fun Support(navViewModel: NavViewModel) {
         SupportMain()
         SelectOptionList()
     }
-    BottomNavigationBar(
-        navViewModel = navViewModel
-    )
 }

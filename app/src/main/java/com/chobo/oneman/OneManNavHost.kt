@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import com.chobo.presentation.view.chatBot.navigation.chatBot
 import com.chobo.presentation.viewmodel.NavViewModel
 import com.chobo.presentation.view.health.navigation.health
+import com.chobo.presentation.view.health.navigation.navigateToHealth
 import com.chobo.presentation.view.home.navigation.home
 import com.chobo.presentation.view.home.navigation.navigateToHome
 import com.chobo.presentation.view.home.navigation.support
@@ -26,19 +27,15 @@ fun OneManNavHost(
             navigateToHome = navHostController::navigateToHome,
         )
         health(
-            navViewModel = NavViewModel
+            navigateToHealth = navHostController::navigateToHealth
         )
         chatBot(
-            navViewModel = NavViewModel
         )
         sun(
-            navViewModel = NavViewModel
         )
         myPage(
-            navViewModel = NavViewModel
         )
         support(
-            navViewModel = NavViewModel
         )
     }
 }

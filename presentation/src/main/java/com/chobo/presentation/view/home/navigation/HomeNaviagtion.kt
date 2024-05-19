@@ -29,11 +29,9 @@ fun NavController.navigateToChatSupport() {
 }
 
 fun NavGraphBuilder.support(
-    navViewModel: NavViewModel
 ) {
     composable(supportRoute) {
         Support(
-            navViewModel = navViewModel
         )
     }
 }

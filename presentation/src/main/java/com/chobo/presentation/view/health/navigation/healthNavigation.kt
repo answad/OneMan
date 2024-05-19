@@ -16,14 +16,12 @@ fun NavController.navigateToHealth() {
 }
 
 fun NavGraphBuilder.health(
-    navViewModel: NavViewModel
+    navigateToHealth: () -> Unit
 ) {
     composable(Health) {
         Column {
             TopAppBar(Health)
-            BottomNavigationBar(
-                navViewModel = navViewModel
-            )
+
         }
     }
 }

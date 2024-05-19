@@ -15,14 +15,10 @@ fun NavController.navigateToChatBot() {
 }
 
 fun NavGraphBuilder.chatBot(
-    navViewModel: NavViewModel,
 ) {
     composable(chatBotRoute) {
         Column {
             TopAppBar(chatBotRoute)
-            BottomNavigationBar(
-                navViewModel = navViewModel
-            )
         }
     }
 }

@@ -15,14 +15,10 @@ fun NavController.navigateToMyPage() {
 }
 
 fun NavGraphBuilder.myPage(
-    navViewModel: NavViewModel,
 ) {
     composable(myPageRoute) {
         Column {
             TopAppBar(myPageRoute)
-            BottomNavigationBar(
-                navViewModel = navViewModel
-            )
         }
     }
 }
