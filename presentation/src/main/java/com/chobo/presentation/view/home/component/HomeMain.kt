@@ -27,7 +27,7 @@ import com.chobo.presentation.view.health.navigation.navigateToHealth
 import com.chobo.presentation.view.home.navigation.navigateToChatSupport
 
 @Composable
-fun HomeMain(navController: NavController){
+fun HomeMain(navigateToHome: () -> Unit) {
     Column(
         verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
         horizontalAlignment = Alignment.Start,
@@ -79,19 +79,19 @@ fun HomeMain(navController: NavController){
         HomeServiceCard(
             topText = "나를 위한 지원 알아보러가기",
             bottomText = "나를 위한 지원 사업 알아보고 지원금 받자!",
-            navigateToDestination = { navController.navigateToChatSupport() }
+            navigateToDestination = navigateToHome
         )
         Spacer(modifier = Modifier.size(12.dp))
         HomeServiceCard(
             topText = "내 건강을 위해 식단 체크해보기",
             bottomText = "식단을 기록하고 돌아보고 건강도 챙기자!",
-            navigateToDestination = { navController.navigateToHealth() }
+            navigateToDestination = navigateToHome
         )
         Spacer(modifier = Modifier.size(12.dp))
         HomeServiceCard(
             topText = "지친 내마음, 달래줄 곳이 필요하다면?",
             bottomText = "무거운 이야기들, 챗봇에게 털어놓자",
-            navigateToDestination = { navController.navigateToChatBot() }
+            navigateToDestination = navigateToHome
         )
     }
     Spacer(modifier = Modifier.size(28.dp))

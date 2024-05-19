@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import com.chobo.presentation.viewmodel.NavViewModel
 import com.chobo.presentation.view.home.Home
 import com.chobo.presentation.view.home.Support
+import kotlin.reflect.KFunction0
 
 const val homeRoute = "홈"
 const val supportRoute = "지원"
@@ -15,12 +16,10 @@ fun NavController.navigateToHome() {
     this.navigate(homeRoute)
 }
 
-fun NavGraphBuilder.home(
-    navViewModel: NavViewModel,
-) {
+fun NavGraphBuilder.home(navigateToHome: KFunction0<Unit>) {
     composable(homeRoute) {
         Home(
-            navViewModel = navViewModel
+            navigateToHome = navigateToHome
         )
     }
 }
